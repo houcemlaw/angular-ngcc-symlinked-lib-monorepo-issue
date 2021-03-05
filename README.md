@@ -15,7 +15,15 @@ A root project json file not found in path when a symlinked lib is used
 
 `ng build myLib --prod`
 
-### Create a llink to the created library
+### Serve the enclosed demo application
+`ng serve`
+
+### Navigate to (localhost:4200)
+
+You should see the library version `0.0.1` in the home page
+
+
+### Create a link to the created library
 `cd dist/my-lib & npm link`
 
 ### Use the library in a new angular project
@@ -25,7 +33,24 @@ A root project json file not found in path when a symlinked lib is used
 `ng new my-app --style=scss --routing`
 
 #### Link the library to the newly created application
-`npm link myLib`
+`cd my-app & npm link my-lib`
+
+#### Use the lib component in the newly created app my-app
+
+#### - import the library module in the main application module `AppModule`
+
+`import { MyModuleModule } from '../../../my-lib/src/public-api';`
+
+
+`imports: [
+    BrowserModule,
+    AppRoutingModule,
+    MyModuleModule
+  ]`
+
+
+#### - Include the lib component in app.component.html
+`<lib-my-component></lib-my-component>`
 
 #### Serve The application
 `ng serve`
