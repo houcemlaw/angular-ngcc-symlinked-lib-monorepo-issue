@@ -55,4 +55,22 @@ You should see the library version `0.0.1` in the home page
 #### Serve The application
 `ng serve`
 
+You should see the following error:
 
+`Error: ../angular-ngcc-symlinked-lib-monorepo-issue/dist/my-lib/fesm2015/my-lib.js
+Module not found: Error: Can't resolve '../../../../../package.json' in '******\angular-ngcc-symlinked-lib-monorepo-issue\dist\my-lib\fesm2015'`
+
+##### Misc
+You may experience IVY compatibility issues when using the library and serving the app.
+Just remove `node_modules` then `npm install`
+
+###### OR
+
+disable IVY in `tsconfig.json` by adding ` "enableIvy": true` to the `angularCompilerOptions` section
+
+###### OR
+
+run ngcc as a postaction by adding the following script in `package.json`
+`"scripts": {
+    "postinstall": "ngcc"
+  }`
