@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
-const packageInfo = require('../../../../../package.json');
+const packageInfo = require('../package.json');
 
 @Component({
   selector: 'lib-my-component',
