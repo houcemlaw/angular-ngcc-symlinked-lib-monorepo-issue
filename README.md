@@ -10,7 +10,9 @@ A root project json file not found in path when a symlinked lib is used
 `git clone https://github.com/houcemlaw/angular-ngcc-symlinked-lib-monorepo-issue.git`
 
 `cd angular-import-not-resolved-repro`
+
 `npm install`
+
 `ng build myLib --prod`
 
 ### Create a llink to the created library
